@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "just-compare-backend"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "just_compare_backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^2.2.3"
+jsonify = "^0.5"
+transformers = "^4.27.1"
+torch = "^2.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+poetry = "^1.4.1"
+pre-commit = "^3.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

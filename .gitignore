@@ -1,0 +1,33 @@
+# Compiled object files
+*.o
+*.class
+*.pyc
+*.pyo
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Local configuration files
+.env
+.DS_Store
+Thumbs.db
+
+# Build output directories
+dist/
+build/
+target/
+
+# Editor and IDE files
+.idea/
+.vscode/
+.sublime-workspace
+
+# Logs and cache directories
+log/
+cache/
+
+# Temporary files
+*~
+*.swp
+.tmp
