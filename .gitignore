@@ -31,3 +31,7 @@ cache/
 *~
 *.swp
 .tmp
+
+## Python
+__pycache__
+.pytest_cache
