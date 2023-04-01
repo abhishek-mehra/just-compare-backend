@@ -18,20 +18,12 @@ repos:
       - id: poetry-export
         args: ["-f", "requirements.txt", "-o", "requirements.txt"]
 
-# -   repo: local
+
+# -   repo: https://github.com/pytest-dev/pytest
+#     rev: '7.2.2'
 #     hooks:
 #       - id: pytest
 #         name: pytest
-#         stages: [commit]
-#         language: system
 #         entry: pytest
-#         types: [python]
-
-
-#       - id: pytest-cov
-#         name: pytest
-#         stages: [push]
 #         language: system
-#         entry: pytest tests
-#         pass_filenames: false
-#         always_run: true
+#         types: [python]
