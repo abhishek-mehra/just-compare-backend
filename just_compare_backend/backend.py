@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
-import torch
-from transformers import AutoTokenizer, AutoModel
+
 from difference_summary.gp2_summary import GPT2Summary
 from similarity_score.gpt2_cosine_similarity import GPT2CosineSimilarity
 
