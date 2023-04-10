@@ -1,26 +1,38 @@
-name: Build and Push Docker Image
-
+name: Build and Push Python Image to Google Cloud Platform
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
-  build-and-push:
+  build-push-gcr:
+    name: Build and Push to GCP
     runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: compare-app
+      PROJECT ID: just-compare-backend
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Configure Docker CLI
-        uses: docker/login-action@v1
-        with:
-          registry: gcr.io
-          username: _json_key
-          password: ${{ secrets.GCLOUD_SA_KEY }}
-      - name: Build Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: |
-            gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/<IMAGE_NAME>:latest
+    - name: Checkout
+      uses: action/checkout@v2
+
+    - uses: google-github-actions/setup-gcloud@master #using actions created by google
+      with:
+        service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
+        project_id: ${{ env.PROJECT_ID }}
+        export_default_credentials: true #exports the credentials service account key and project id
+      #this steps authenticate docker with container registry
+
+    - name: Build Docker Image
+      run: docker build -t $IMAGE_NAME:latest .
+
+    - name: Configure Docker Client
+      run: |-
+        gcloud auth configure-docker --quiet
+
+    - name: Push Docker Image to Container Registry (GCR)
+      env:
+      GIT_TAG: v0.1.0
+      run: |-
+        docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
+        docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
+        docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
+        docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
