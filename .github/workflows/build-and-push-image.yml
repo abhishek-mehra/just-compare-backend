@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: compare-app
-      PROJECT ID: just-compare-backend
+      PROJECT_ID: just-compare-backend
     steps:
     - name: Checkout
       uses: action/checkout@v2
@@ -30,7 +30,7 @@ jobs:
 
     - name: Push Docker Image to Container Registry (GCR)
       env:
-      GIT_TAG: v0.1.0
+        GIT_TAG: v0.1.0
       run: |-
         docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
         docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
