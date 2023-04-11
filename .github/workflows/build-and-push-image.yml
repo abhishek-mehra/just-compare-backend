@@ -1,16 +1,16 @@
-name: Build and Push Python Image to Google Cloud Platform
-on:
+name: Build and Push Python Image to Google Cloud Platform # name of the workflow
+on:    # The trigger for workflow
   push:
     branches: [ main ]
 
-jobs:
-  build-push-gcr:
+jobs:  #groups together all the jobs
+  build-push-gcr:  #the job name
     name: Build and Push to GCP
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: compare-app
       PROJECT_ID: just-compare-backend
-    steps:
+    steps:    #groups together all the steps that run in build-push-gcr
     - name: Checkout
       uses: action/checkout@v2
 
