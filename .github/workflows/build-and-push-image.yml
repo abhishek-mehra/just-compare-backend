@@ -12,9 +12,9 @@ jobs:  #groups together all the jobs
       PROJECT_ID: just-compare-backend
     steps:    #groups together all the steps that run in build-push-gcr
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3 #downloads a copy of my code , for the workflow to access it
 
-    - uses: google-github-actions/setup-gcloud@v0 #using actions created by google
+    - uses: google-github-actions/setup-gcloud@v0 #A GitHub Action for installing and configuring the gcloud CLI.
       with:
         service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
         project_id: ${{ env.PROJECT_ID }}
@@ -22,12 +22,12 @@ jobs:  #groups together all the jobs
       #this steps authenticate docker with container registry
 
     - name: Build Docker Image
-      run: docker build -t $IMAGE_NAME:latest .
+      run: docker build -t $IMAGE_NAME:latest . #builds the docker image
 
-    - name: Configure Docker Client
+    - name: Configure Docker Client #this authorises docker to use gcloud.
       run: |-
         gcloud auth configure-docker --quiet
-
+ #it allows the docker to use cloud registry,to push and pull images
     - name: Push Docker Image to Container Registry (GCR)
       env:
         GIT_TAG: v0.1.0
