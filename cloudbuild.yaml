@@ -4,5 +4,4 @@ steps:
   args:
   - '-c'
   - |
-    gcloud auth configure-docker -q
     gcloud run deploy my-app --image gcr.io/just-compare-backend/compare-app:$latest,v0.1.0 --region us-central1 --platform managed --allow-unauthenticated
