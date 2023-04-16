@@ -1,3 +1,11 @@
+class GPT2Summary:
+    def __init__(self):
+        pass
+
+    def generate_gp2_summary(self, text1, text2):
+        return "test for continous deployment"
+
+
 # from transformers import GPT2Tokenizer, GPT2LMHeadModel
 
 
@@ -20,11 +28,3 @@
 #         summary = self.tokenizer.decode(summary_ids[0], skip_special_tokens=True)
 
 #         return summary
-
-
-class GPT2Summary:
-    def __init__(self):
-        pass
-
-    def generate_gp2_summary(self, text1, text2):
-        return "summary generated"
