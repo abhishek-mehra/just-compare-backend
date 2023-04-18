@@ -1,0 +1,19 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'run'
+  - 'deploy'
+  - 'my-app'
+  - '--image'
+  - 'gcr.io/$PROJECT_ID/compare-app:$COMMIT_SHA'
+  - '--port'
+  - '5001'
+  - '--platform'
+  - 'managed'
+  - '--region'
+  - 'us-central1'
+  - '--allow-unauthenticated'
+
+images:
+- 'gcr.io/$PROJECT_ID/compare-app:$COMMIT_SHA'
