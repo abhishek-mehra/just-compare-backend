@@ -41,7 +41,7 @@ jobs:  #groups together all the jobs
       name: Deploy Docker image
       uses: "google-github-actions/deploy-cloudrun@v1"
       with:
-        image: gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
+        image: gcr.io/$PROJECT_ID/$IMAGE_NAME
         region: us-central1
         service: app
         flags: --port=5001
