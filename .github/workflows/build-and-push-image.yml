@@ -41,6 +41,6 @@ jobs:  #groups together all the jobs
       uses: "google-github-actions/deploy-cloudrun@v1"
       with:
         service: 'just-compare-backend'
-        image: 'gcr.io/$PROJECT_ID/$IMAGE_NAME'
+        image: 'gcr.io/just-compare-backend/compare-app'
         region: us-central1
         flags: --port=5001
