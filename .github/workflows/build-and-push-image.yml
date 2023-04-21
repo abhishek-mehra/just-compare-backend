@@ -30,4 +30,5 @@ jobs:  #groups together all the jobs
  #it allows the docker to use cloud registry,to push and pull images
     - name: Push Docker Image to Container Registry (GCR)
 
-      run: docker push gcr.io/$PROJECT_ID/$IMAGE_NAME
+      run: |-
+        docker push gcr.io/$PROJECT_ID/$IMAGE_NAME: latest
