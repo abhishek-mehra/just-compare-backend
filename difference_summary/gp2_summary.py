@@ -3,7 +3,7 @@ class GPT2Summary:
         pass
 
     def generate_gp2_summary(self, text1, text2):
-        return "Continous deployment from cloud build pass"
+        return "Continous deployment from cloud build passed"
 
 
 # from transformers import GPT2Tokenizer, GPT2LMHeadModel
