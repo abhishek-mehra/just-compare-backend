@@ -8,7 +8,7 @@ app = Flask(__name__)
 gp2_summary = GPT2Summary()
 
 
-# Define the API endpoint for generating a GPT-2 summary
+# Define the API endpoint for generating a summary
 @app.route("/generate_summary", methods=["POST"])
 def generate_summary():
     # Get the input text from the request
@@ -16,7 +16,7 @@ def generate_summary():
     text1 = data["text1"]
     text2 = data["text2"]
 
-    # Generate a summary of the input texts using the GPT-2 model
+    # Generate a summary of the input texts using the model
     summary = gp2_summary.generate_gp2_summary(text1, text2)
 
     # Return the summary as a JSON response

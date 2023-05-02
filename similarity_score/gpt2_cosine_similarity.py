@@ -1,3 +1,23 @@
+from sentence_transformers import SentenceTransformer, util
+
+
+class GPT2CosineSimilarity:
+    def __init__(self, model_name="all-MiniLM-L6-v2"):
+        self.model = SentenceTransformer(model_name)
+
+    def get_cosine_similarity(self, text1, text2):
+        # generate text embeddings
+        embeddings1 = self.model.encode(text1)
+        embeddings2 = self.model.encode(text2)
+
+        # compute cosine score
+        cosine_score = util.cos_sim(
+            embeddings1, embeddings2
+        ).item()  # item() - converts the single tensor to python number
+
+        return round(cosine_score, 3)
+
+
 # import torch
 # from transformers import GPT2Tokenizer, GPT2Model
 
@@ -29,11 +49,3 @@
 #         similarity = torch.nn.functional.cosine_similarity(embeddings1, embeddings2)
 
 #         return similarity.item()
-
-
-class GPT2CosineSimilarity:
-    def __init__(self):
-        pass
-
-    def get_cosine_similarity(self, text1, text2):
-        return "similarity generated"
