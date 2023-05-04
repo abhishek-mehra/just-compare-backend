@@ -3,12 +3,12 @@ from flask import Flask, request, jsonify
 from difference_summary.gp2_summary import GPT2Summary
 from similarity_score.gpt2_cosine_similarity import GPT2CosineSimilarity
 
+gp2_summary = GPT2Summary()
+gpt2_cosine_similarity = GPT2CosineSimilarity()
 app = Flask(__name__)
 
-gp2_summary = GPT2Summary()
 
-
-# Define the API endpoint for generating a summary
+# Define the API endpoint for generating a GPT-2 summary
 @app.route("/generate_summary", methods=["POST"])
 def generate_summary():
     # Get the input text from the request
@@ -16,15 +16,12 @@ def generate_summary():
     text1 = data["text1"]
     text2 = data["text2"]
 
-    # Generate a summary of the input texts using the model
+    # Generate a summary of the input texts using the GPT-2 model
     summary = gp2_summary.generate_gp2_summary(text1, text2)
 
     # Return the summary as a JSON response
     response = {"summary": summary}
     return jsonify(response)
-
-
-gpt2_cosine_similarity = GPT2CosineSimilarity()
 
 
 # Define the API endpoint for text comparison
