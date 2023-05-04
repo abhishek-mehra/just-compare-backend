@@ -2,10 +2,21 @@ from flask import Flask, request, jsonify
 
 from difference_summary.gp2_summary import GPT2Summary
 from similarity_score.gpt2_cosine_similarity import GPT2CosineSimilarity
+import logging
+import os
+
+
+logging.basicConfig(
+    level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(module)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
 
 gp2_summary = GPT2Summary()
 gpt2_cosine_similarity = GPT2CosineSimilarity()
+
+logger.info(f'INITIALIZED HELPER CLASSES {os.getenv("K_REVISION")}')
 app = Flask(__name__)
+logger.info(f'INITIALIZED FLASK APP {os.getenv("K_REVISION")}')
 
 
 # Define the API endpoint for generating a GPT-2 summary
