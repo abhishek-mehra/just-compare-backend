@@ -8,9 +8,9 @@ logger = logging.getLogger(__name__)
 
 
 class GPT2CosineSimilarity:
-    def __init__(self, model_name="all-MiniLM-L6-v2"):
-        self.model = SentenceTransformer(model_name)
-        logger.info(f"DOWNLOADED {model_name}")
+    def __init__(self, model_path="./model-lm"):
+        self.model = SentenceTransformer(model_path)
+        logger.info(f"DOWNLOADED {model_path}")
 
     def get_cosine_similarity(self, text1, text2):
         # generate text embeddings
