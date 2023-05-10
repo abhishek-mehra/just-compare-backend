@@ -502,9 +502,9 @@ sentencepiece==0.1.99 ; python_version >= "3.10" and python_version < "4.0" \
 setuptools==67.7.2 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:23aaf86b85ca52ceb801d32703f12d77517b2556af839621c641fca11287952b \
     --hash=sha256:f104fa03692a2602fa0fec6c6a9e63b6c8a968de13e17c026957dd1f53d80990
-sympy==1.11.1 ; python_version >= "3.10" and python_version < "4.0" \
-    --hash=sha256:938f984ee2b1e8eae8a07b884c8b7a1146010040fccddc6539c54f401c8f6fcf \
-    --hash=sha256:e32380dce63cb7c0108ed525570092fd45168bdae2faa17e528221ef72e88658
+sympy==1.12 ; python_version >= "3.10" and python_version < "4.0" \
+    --hash=sha256:c3588cd4295d0c0f603d0f2ae780587e64e2efeedb3521e46b9bb1d08d184fa5 \
+    --hash=sha256:ebf595c8dac3e0fdc4152c51878b498396ec7f30e7a914d6071e674d49420fb8
 threadpoolctl==3.1.0 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:8b99adda265feb6773280df41eece7b2e6561b772d21ffd52e372f999024907b \
     --hash=sha256:a335baacfaa4400ae1f0d8e3a58d6674d2f8828e3716bb2802c44955ad391380
@@ -594,9 +594,9 @@ torchvision==0.15.2 ; python_version >= "3.10" and python_version < "4.0" \
 tqdm==4.65.0 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:1871fb68a86b8fb3b59ca4cdd3dcccbc7e6d613eeed31f4c332531977b89beb5 \
     --hash=sha256:c4f53a17fe37e132815abceec022631be8ffe1b9381c2e6e30aa70edc99e9671
-transformers==4.28.1 ; python_version >= "3.10" and python_version < "4.0" \
-    --hash=sha256:7334f8730cff7ac31d9ba5c12f2113fcb7a7a5b61eeb5dbbdb162117c3aaa2d1 \
-    --hash=sha256:f30a006220d0475789ac0e7c874f51bf5143956797616d89975b637883ce0be6
+transformers==4.29.0 ; python_version >= "3.10" and python_version < "4.0" \
+    --hash=sha256:51f89cbdd515dffac38c002277511d004e1a12a284ab852a4d5641430a409d1f \
+    --hash=sha256:b5dff9ce3708dc6639d892435fa69c51dee5c89870f888fa59ef0fc3baa3d8c7
 typing-extensions==4.5.0 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:5cb5f4a79139d699607b3ef622a1dedafa84e115ab0024e0d9c044a9479ca7cb \
     --hash=sha256:fb33085c39dd998ac16d1431ebc293a8b3eedd00fd4a32de0ff79002c19511b4
